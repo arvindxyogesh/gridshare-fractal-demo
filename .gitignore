@@ -1,0 +1,21 @@
+# Docker
+Dockerfile
+docker-compose.yml
+results/
+__pycache__/
+*.pyc
+.env
+
+# System
+.DS_Store
+Thumbs.db
+
+# Node (if any)
+node_modules/
+npm-debug.log*
+
+# Python
+*.pyc
+__pycache__/
+venv/
+.env
