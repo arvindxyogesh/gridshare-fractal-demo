@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GridShare Fractal Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌌 GridShare Fractal Demo</h1>
+            <p>Distributed GPU Mandelbrot Rendering</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="control-panel">
+                <h2>Render Settings</h2>
+                <div class="form-group">
+                    <label>Resolution:</label>
+                    <select id="resolution">
+                        <option value="512">512×512</option>
+                        <option value="1024" selected>1024×1024</option>
+                        <option value="2048">2048×2048</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Iterations:</label>
+                    <input type="range" id="iterations" min="100" max="2000" value="500" step="100">
+                    <span id="iterations-value">500</span>
+                </div>
+                
+                <div class="form-group">
+                    <label>Tiles:</label>
+                    <select id="tiles">
+                        <option value="2">2×2 (4 tiles)</option>
+                        <option value="4" selected>4×4 (16 tiles)</option>
+                        <option value="8">8×8 (64 tiles)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="use_gpu">
+                        Use GPU Acceleration
+                    </label>
+                </div>
+                
+                <button id="render-btn" class="render-button">Render Fractal</button>
+                <button id="stop-btn" class="stop-button" disabled>Stop</button>
+            </div>
+
+            <div class="status-panel">
+                <h2>System Status</h2>
+                <div id="workers-status" class="workers-grid">
+                    <!-- Worker status will be populated here -->
+                </div>
+                
+                <div class="job-status">
+                    <h3>Render Progress</h3>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <div id="progress-text">Ready</div>
+                    <div id="performance-stats" class="performance-stats"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-panel">
+            <h2>Fractal Output</h2>
+            <div class="image-container">
+                <img id="fractal-image" src="" alt="Fractal Render">
+                <div id="no-image" class="no-image">
+                    No fractal rendered yet. Click "Render Fractal" to start.
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>GridShare Demo - Distributed GPU Computing Platform</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
