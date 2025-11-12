@@ -1,6 +1,6 @@
 # GridShare Fractal Demo 🌌 
 
-####(find the website at https://arvindxyogesh.github.io/gridshare-fractal-demo/)
+(find the website at https://arvindxyogesh.github.io/gridshare-fractal-demo/)
 
 ## Distributed GPU Mandelbrot Renderer
 
